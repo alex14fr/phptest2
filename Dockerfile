@@ -20,6 +20,7 @@ RUN mv /usr/src/femail /usr/sbin/sendmail
 RUN mv /usr/src/* /var/www/localhost/htdocs
 RUN chmod -R a+rwx /var/www
 RUN chown -R apache /var/www
+RUN chmod -R a+rwx /run
 
 CMD [ "httpd", "-D", "FOREGROUND" ]
 
