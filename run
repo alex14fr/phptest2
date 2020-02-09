@@ -4,6 +4,7 @@ echo hello from run
 whoami
 pwd
 cp -a /persist/code/* .
+rm index.html
 cp -a /persist/code/.htaccess .
 ln -s /persist/data 
 ln -s /persist/pecnum 
