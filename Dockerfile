@@ -17,7 +17,9 @@ RUN apk add --no-cache php7-cli php7-apache2 php7-bz2 \
 	 mv /usr/src/* /var/www/localhost/htdocs ; \
 	 chmod -R a+rwx /var/www ; \
 	 chown -R apache /var/www ; \
-	 chmod -R a+rwx /run
+	 chmod -R a+rwx /run ; \
+	 mkdir /persist ; \
+	 chmod -R a+rwx /persist
 
 WORKDIR /var/www/localhost/htdocs
 EXPOSE 8080
