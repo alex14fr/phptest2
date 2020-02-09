@@ -15,7 +15,7 @@ RUN mv /etc/php7/php.ini /etc/php7/php.ini.alpine
 RUN mv /usr/src/php.ini /etc/php7/
 RUN mv /usr/src/femail /usr/sbin/sendmail
 RUN mv /usr/src/* /var/www/localhost/htdocs
-RUN chmod -R a+rwx /var/www/localhost/htdocs
+RUN chmod -R a+rwx /var/www
 
 CMD [ "httpd", "-D", "FOREGROUND" ]
 
