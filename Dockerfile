@@ -5,7 +5,7 @@ COPY . /usr/src/
 RUN apk add --no-cache php7-cli php7-apache2 php7-bz2 \
     php7-curl php7-opcache php7-openssl php7-pdo php7-pdo_sqlite php7-session \
     php7-simplexml php7-sqlite3 php7-zip apache2 git \
-	 ghostscript openssl sqlite openssh-client ; \
+	 ghostscript openssl sqlite openssh-client perl ; \
 	 mv /etc/apache2/httpd.conf /etc/apache2/httpd.conf.alpine ; \
 	 mv /usr/src/httpd.conf /etc/apache2/ ; \
 	 rm /var/www/logs ; \
@@ -20,7 +20,9 @@ RUN apk add --no-cache php7-cli php7-apache2 php7-bz2 \
 	 chmod -R a+rwx /run ; \
 	 mkdir /persist ; \
 	 chmod -R a+rwx /persist ; \
-	 echo "user:x:1000910000:0:my user:/sbin/nologin" >> /etc/passwd
+	 mkdir /persist/home ; \
+	 chown -R 1000910000:1000910000 /persist/home ; \
+	 echo "user:x:1000910000:1000910000:my user:/persist/home:/sbin/nologin" >> /etc/passwd
 
 WORKDIR /var/www/localhost/htdocs
 EXPOSE 8080
