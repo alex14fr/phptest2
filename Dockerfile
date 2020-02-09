@@ -21,6 +21,6 @@ RUN apk add --no-cache php7-cli php7-apache2 php7-bz2 \
 
 WORKDIR /var/www/localhost/htdocs
 EXPOSE 8080
-CMD [ "run" ]
+CMD [ "./run" ]
 
 
