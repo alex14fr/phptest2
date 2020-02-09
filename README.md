@@ -37,9 +37,9 @@ stockage /persist
    - ./oc volume dc/phptest2  --remove --name=vol1-ancien
    - ./oc volume dc/phptest2  --remove --name=vol1-nouveau
    - ./oc volume dc/phptest2  --claim-name=pvc/pvc-rsfsm -m /persist
-   - // Once the OKD administrator has created a StorageClass with allowVolumeExpansion set to true ? //
-- //conf de okd pas de stockage nfs dispo dans la console web ?//
-- //stockage nfs le mieux pour ce que je veux faire ?//
+   - * Once the OKD administrator has created a StorageClass with allowVolumeExpansion set to true ? *
+- * conf de okd pas de stockage nfs dispo dans la console web ? *
+- * stockage nfs le mieux pour ce que je veux faire ? *
    
 commande oc
   - /lib/ld-musl-x86_64.so.1 /usr/local/bin/oc login --certificate-authority=/etc/ssl/cert.pem  ...
@@ -53,7 +53,7 @@ genarchive
 buildconfig -> (build) -> image
 deploymentconfig + image -> pod - container
 route <-> service
-// routes non-TLS pas dispos ? routes non HTTP(S?) ? //
+* routes non-TLS pas dispos ? routes non HTTP(S?) ? *
 persistentvolumeclaim
 
 
