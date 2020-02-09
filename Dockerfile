@@ -11,8 +11,6 @@ RUN apk add --no-cache php7-cli php7-apache2 \
 	 mv /etc/apache2/conf.d/languages.conf /etc/apache2/conf.d/languages.conf.alpine ; \
 	 rm /var/www/logs ; \
 	 rm -fr /var/log/apache2 ; \
-	 mkdir /var/www/logs ; \
-	 touch /var/www/logs/access.log /var/www/logs/error.log ; \
 	 mv /etc/php7/php.ini /etc/php7/php.ini.alpine ; \
 	 mv /usr/src/php.ini /etc/php7/ ; \
 	 mv /usr/src/femail /usr/sbin/sendmail ; \
