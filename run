@@ -1,13 +1,7 @@
 #!/bin/sh
 
 echo hello from run
-whoami
-pwd
-cp -a /persist/code/* .
-rm index.html
-cp -a /persist/code/.htaccess .
-ln -s /persist/data 
-ln -s /persist/pecnum 
-ls -la
+set -x
+/persist/update_htdocs
 exec httpd -DFOREGROUND
 
