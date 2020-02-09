@@ -13,7 +13,7 @@ Dockerfile
  - le copie dans htdocs
  
  ```sh
- #!/bin/sh
+#!/bin/sh
 
 set -x
 cd /persist/code
@@ -23,6 +23,8 @@ cd /var/www/localhost/htdocs
 rm index.html Dockerfile README.md
 [ -d data ] || ln -s /persist/data
 [ -d pecnum ] || ln -s /persist/pecnum
+php daily.php
+rm ephemeral/cache/*
 ```
 
  
