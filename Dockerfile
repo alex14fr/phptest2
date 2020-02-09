@@ -20,9 +20,7 @@ RUN apk add --no-cache php7-cli php7-apache2 php7-bz2 \
 	 chmod -R a+rwx /run ; \
 	 mkdir /persist ; \
 	 chmod -R a+rwx /persist ; \
-	 mkdir /persist/home ; \
-	 chown -R 1000910000:1000910000 /persist/home ; \
-	 echo "user:x:1000910000:1000910000:my user:/persist/home:/sbin/nologin" >> /etc/passwd
+	 echo "user:x:1000910000:1000910000:my user:/persist:/sbin/nologin" >> /etc/passwd
 
 WORKDIR /var/www/localhost/htdocs
 EXPOSE 8080
