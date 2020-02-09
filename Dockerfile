@@ -8,7 +8,9 @@ RUN apk add --no-cache php7-cli php7-apache2 \
 	 libressl sqlite dropbear-scp dropbear-ssh ; \
 	 mv /etc/apache2/httpd.conf /etc/apache2/httpd.conf.alpine ; \
 	 mv /usr/src/httpd.conf /etc/apache2/ ; \
-	 mv /etc/apache2/conf.d/languages.conf /etc/apache2/conf.d/languages.conf.alpine ; \
+	 for i in languages userdir info; do \
+		 mv /etc/apache2/conf.d/$i.conf /etc/apache2/conf.d/$i.conf.alpine ; \
+	 done ; \
 	 rm /var/www/logs ; \
 	 rm -fr /var/log/apache2 ; \
 	 mv /etc/php7/php.ini /etc/php7/php.ini.alpine ; \
